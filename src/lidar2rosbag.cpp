@@ -171,7 +171,7 @@ int main(int argc, char **argv) {
 
   if(argc<3)
   {
-      printf("ERROR: Please follow the example: rosrun pkg node input num_output:\n  rosrun loam_velodyne lidar2rosbag /data/KITTI/dataset/sequences/04/ 04 \n");
+      printf("ERROR: Please follow the example: rosrun pkg node input num_output:\n  rosrun lidar2rosbag lidar2rosbag /data/KITTI/dataset/sequences/04/ 04 \n");
       return -2;
 
   }
