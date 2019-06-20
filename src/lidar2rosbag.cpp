@@ -154,8 +154,8 @@ void Benchmark2TUM(const string &num)
 
 
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "lidar2rosbag");
-  ros::NodeHandle nh;
+    ros::init(argc, argv, "lidar2rosbag");
+    ros::NodeHandle nh;
 
   //temp:process benchmark
 //   for(int i=0;i<=10;i++)
@@ -169,17 +169,15 @@ int main(int argc, char **argv) {
 //     printf("process  %d, \n", i);
 //   }
 
-  if(argc<3)
-  {
-      printf("ERROR: Please follow the example: rosrun pkg node input num_output:\n  rosrun lidar2rosbag lidar2rosbag /data/KITTI/dataset/sequences/04/ 04 \n");
-      return -2;
+    if(argc<3)
+    {
+        printf("ERROR: Please follow the example: rosrun pkg node input num_output:\n  rosrun lidar2rosbag lidar2rosbag /data/KITTI/dataset/sequences/04/ 04 \n");
+        return -2;
 
-  }
-     
+    }
 
-  pubLaserCloud = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_points_pub", 2);
+    pubLaserCloud = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_points_pub", 2);
 
- 
     std::string input_dir = argv[1];
     std::string output_dir = argv[2];
     std::string bin_path = input_dir + "velodyne/" ;//"/data/KITTI/dataset/sequences/04/velodyne/";
@@ -229,7 +227,7 @@ int main(int argc, char **argv) {
         }
         // pcl::PointCloud<PointXYZI>::Ptr points (new pcl::PointCloud<PointXYZI>);
         pcl::PointCloud<pcl::PointXYZI> points;
-        const size_t kMaxNumberOfPoints = 1e6;  // From Readme for raw files.
+        const size_t kMaxNumberOfPoints = 1e6;  // From the Readme of raw files.
         points.clear();
         points.reserve(kMaxNumberOfPoints);
 
